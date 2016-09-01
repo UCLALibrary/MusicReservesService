@@ -1,0 +1,14 @@
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\beans\Course.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\generators\ClassesGenerator.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\generators\CurrentQuarterGenerator.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\db\source\DataSourceFactory.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\services\ClassesService.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\db\mappers\CourseMapper.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\db\mappers\WorkMapper.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\beans\CurrentQuarter.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\beans\Classes.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\generators\CourseGenerator.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\db\mappers\CurrentQuarterMapper.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\generators\WorkGenerator.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\beans\Work.java
+H:\mywork\MusicReserves\src\main\java\edu\ucla\library\libservices\music\tests\Tester.java

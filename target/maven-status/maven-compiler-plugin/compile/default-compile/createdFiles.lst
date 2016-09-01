@@ -1,0 +1,14 @@
+edu\ucla\library\libservices\music\db\mappers\WorkMapper.class
+edu\ucla\library\libservices\music\beans\CurrentQuarter.class
+edu\ucla\library\libservices\music\db\source\DataSourceFactory.class
+edu\ucla\library\libservices\music\generators\ClassesGenerator.class
+edu\ucla\library\libservices\music\generators\CurrentQuarterGenerator.class
+edu\ucla\library\libservices\music\db\mappers\CourseMapper.class
+edu\ucla\library\libservices\music\beans\Classes.class
+edu\ucla\library\libservices\music\generators\CourseGenerator.class
+edu\ucla\library\libservices\music\services\ClassesService.class
+edu\ucla\library\libservices\music\tests\Tester.class
+edu\ucla\library\libservices\music\generators\WorkGenerator.class
+edu\ucla\library\libservices\music\beans\Work.class
+edu\ucla\library\libservices\music\db\mappers\CurrentQuarterMapper.class
+edu\ucla\library\libservices\music\beans\Course.class

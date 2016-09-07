@@ -9,10 +9,22 @@ public class Work
 {
   @XmlElement(name = "isVideo")
   private boolean isVideo;
+  @XmlElement(name = "display")
+  private String display;
   @XmlElement(name = "httpURL")
   private String httpURL;
   @XmlElement(name = "rtmpURL")
   private String rtmpURL;
+
+  public void setDisplay( String display )
+  {
+    this.display = display;
+  }
+
+  public String getDisplay()
+  {
+    return display;
+  }
 
   public void setIsVideo( boolean isVideo )
   {

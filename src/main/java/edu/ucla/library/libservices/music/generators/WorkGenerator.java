@@ -13,9 +13,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class WorkGenerator
 {
   private static final String QUERY =
-    "SELECT Video, dbo.get_http_url(Video,Baseaddress,Volume,Disc,Side,Track) as http_url, dbo.get_rtmp_url(Video," 
-    + "Baseaddress,Volume,Disc,Side,Track) as rtmp_url FROM dbo.Classes c INNER JOIN dbo.Link l ON c.ClassID = " 
-    + "l.ClassID INNER JOIN dbo.Works w ON l.WorkID = w.WorkID INNER JOIN dbo.Items i ON w.WorkID = i.WorkID WHERE SRS = ?";
+    "SELECT Video, dbo.get_display(Composer,w.Title,Caption) AS Display, dbo.get_http_url(Video,Baseaddress,Volume,Disc," 
+    + "Side,Track) as http_url, dbo.get_rtmp_url(Video,Baseaddress,Volume,Disc,Side,Track) as rtmp_url FROM dbo.Classes" 
+    + " c INNER JOIN dbo.Link l ON c.ClassID = l.ClassID INNER JOIN dbo.Works w ON l.WorkID = w.WorkID INNER JOIN " 
+    + "dbo.Items i ON w.WorkID = i.WorkID WHERE SRS = ?";
   private DataSource ds;
   private String srs;
   private List<Work> works;

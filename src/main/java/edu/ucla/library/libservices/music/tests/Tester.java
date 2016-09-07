@@ -21,11 +21,11 @@ public class Tester
   public static void main( String[] args )
   {
     ClassesGenerator tester;
-    Classes allClasses;
+    Classes          allClasses;
     tester = new ClassesGenerator();
     allClasses = tester.getAllClasses();
 
-    List<Course>    courses;
+    List<Course> courses;
     courses = allClasses.getCourses();
 
     for ( Course theCourse: courses )
@@ -33,7 +33,8 @@ public class Tester
       System.out.println( "course = " + theCourse.getSrs() + "\tterm = " + theCourse.getTerm() );
       List<Work> works = theCourse.getWorks();
       for ( Work theWork: works )
-        System.out.println( "\tis video ? " + theWork.isIsVideo() + "\tHTTP URL = " + theWork.getHttpURL() );
+        System.out.println( "\tis video ? " + theWork.isIsVideo() + "\tdisplay is " + theWork.getDisplay() +
+                            "\n\tHTTP URL = " + theWork.getHttpURL() );
     }
 
   }

@@ -21,6 +21,7 @@ public class WorkMapper
   {
     Work bean;
     bean = new Work();
+    bean.setDisplay( rs.getString( "Display" ) );
     bean.setHttpURL( rs.getString( "http_url" ) );
     bean.setIsVideo( rs.getBoolean( "video" ) );
     bean.setRtmpURL( rs.getString( "rtmp_url" ) );

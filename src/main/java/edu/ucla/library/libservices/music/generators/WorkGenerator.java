@@ -12,13 +12,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 public class WorkGenerator
 {
-  private static final String QUERY =
-    "SELECT Video, dbo.get_display(Composer,w.Title,Caption) AS Display, dbo.get_http_url(Video,Baseaddress,Volume,Disc," 
-    + "Side,Track) as http_url, dbo.get_rtmp_url(Video,Baseaddress,Volume,Disc,Side,Track) as rtmp_url FROM dbo.Classes" 
-    + " c INNER JOIN dbo.Link l ON c.ClassID = l.ClassID INNER JOIN dbo.Works w ON l.WorkID = w.WorkID INNER JOIN " 
-    + "dbo.Items i ON w.WorkID = i.WorkID WHERE SRS = ?";
+  private static final String QUERY = "SELECT * FROM dbo.get_works(?) ORDER BY Display";
+    //"SELECT Video, dbo.get_display(Composer,w.Title,Caption) AS Display, dbo.get_http_url(Video,Baseaddress,Volume," +
+    //"Disc, Side,Track) as http_url, dbo.get_rtmp_url(Video,Baseaddress,Volume,Disc,Side,Track) as rtmp_url FROM " +
+    //"dbo.Works w INNER JOIN dbo.Link l ON w.workid = l.workid INNER JOIN dbo.Classes c ON l.ClassID = c.ClassID " +
+    //"LEFT JOIN dbo.Items i ON l.items = i.ItemID WHERE SRS = ? ORDER BY Display";
+
   private DataSource ds;
-  private String srs;
+  private String     srs;
   private List<Work> works;
 
   public void setSrs( String srs )
@@ -39,8 +40,8 @@ public class WorkGenerator
   public List<Work> getWorks()
   {
     makeConnection();
-    
-    works = new JdbcTemplate(ds).query( QUERY, new Object[]{getSrs()}, new WorkMapper() );
+
+    works = new JdbcTemplate( ds ).query( QUERY, new Object[] { getSrs() }, new WorkMapper() );
     return works;
   }
 

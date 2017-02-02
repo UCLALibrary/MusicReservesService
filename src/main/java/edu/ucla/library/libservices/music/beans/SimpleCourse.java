@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
 @XmlAccessorType( XmlAccessType.FIELD )
-public class Course
+public class SimpleCourse
 {
   @XmlElement( name = "term" )
   private String term;
   @XmlElement( name = "srs" )
   private String srs;
   @XmlElement( name = "works" )
-  private List<Work> works;
+  private List<SimpleWork> works;
 
-  public Course()
+  public SimpleCourse()
   {
     super();
   }
@@ -41,12 +41,12 @@ public class Course
     return srs;
   }
 
-  public void setWorks( List<Work> works )
+  public void setWorks( List<SimpleWork> works )
   {
     this.works = works;
   }
 
-  public List<Work> getWorks()
+  public List<SimpleWork> getWorks()
   {
     return works;
   }

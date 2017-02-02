@@ -9,22 +9,23 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType( XmlAccessType.FIELD )
 @XmlRootElement( name = "classes" )
-public class Classes
+public class SimpleClasses
 {
-  public void setCourses( List<Course> courses )
+  @XmlElement( name = "courses" )
+  private List<SimpleCourse> courses;
+
+  public SimpleClasses()
+  {
+    super();
+  }
+
+  public void setCourses( List<SimpleCourse> courses )
   {
     this.courses = courses;
   }
 
-  public List<Course> getCourses()
+  public List<SimpleCourse> getCourses()
   {
     return courses;
-  }
-  @XmlElement( name = "courses" )
-  private List<Course> courses;
-
-  public Classes()
-  {
-    super();
   }
 }

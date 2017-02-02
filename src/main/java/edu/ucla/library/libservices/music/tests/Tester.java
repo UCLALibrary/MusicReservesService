@@ -1,13 +1,10 @@
 package edu.ucla.library.libservices.music.tests;
 
-import edu.ucla.library.libservices.music.beans.Classes;
 import edu.ucla.library.libservices.music.beans.Course;
-import edu.ucla.library.libservices.music.beans.CurrentQuarter;
+
+import edu.ucla.library.libservices.music.beans.Item;
 import edu.ucla.library.libservices.music.beans.Work;
-import edu.ucla.library.libservices.music.generators.ClassesGenerator;
 import edu.ucla.library.libservices.music.generators.CourseGenerator;
-import edu.ucla.library.libservices.music.generators.CurrentQuarterGenerator;
-import edu.ucla.library.libservices.music.generators.WorkGenerator;
 
 import java.util.List;
 
@@ -20,22 +17,27 @@ public class Tester
 
   public static void main( String[] args )
   {
-    ClassesGenerator tester;
-    Classes          allClasses;
-    tester = new ClassesGenerator();
-    allClasses = tester.getAllClasses();
+    CourseGenerator geenrator;
+    List<Course>    courses;
 
-    List<Course> courses;
-    courses = allClasses.getCourses();
+    geenrator = new CourseGenerator();
+    courses = geenrator.getCourses();
 
     for ( Course theCourse: courses )
     {
-      System.out.println( "course = " + theCourse.getSrs() + "\tterm = " + theCourse.getTerm() );
-      List<Work> works = theCourse.getWorks();
-      for ( Work theWork: works )
-        System.out.println( "\tis video ? " + theWork.isIsVideo() + "\tdisplay is " + theWork.getDisplay() +
-                            "\n\tHTTP URL = " + theWork.getHttpURL() );
-    }
+      List<Work> works;
+      
+      System.out.println( "SRS = " + theCourse.getSrs() + "\tTerm = " + theCourse.getTerm() );
+      works = theCourse.getWorks();
+      for ( Work theWork : works )
+      {
+        List<Item> items;
 
+        System.out.println( "\tComposer = " + theWork.getComposer() + "\tTitle = " + theWork.getTitle() );
+        items = theWork.getItems();
+        for ( Item theItem : items )
+          System.out.println( "\t\tTitle = " + theItem.getTrackTitle() + "\tURL = " + theItem.getHttpURL() );
+      }
+    }
   }
 }

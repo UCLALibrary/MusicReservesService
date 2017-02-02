@@ -10,13 +10,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
-@Path( "/v2/classes" )
-public class ClassesService
+@Path( "/classes" )
+public class SimpleClassesService
 {
   @Context
   ServletConfig config;
 
-  public ClassesService()
+  public SimpleClassesService()
   {
     super();
   }
@@ -28,7 +28,8 @@ public class ClassesService
     ClassesGenerator docMaker;
 
     docMaker = new ClassesGenerator();
+    //docMaker.setInstitutionID( Integer.parseInt( config.getServletContext().getInitParameter( "iid.ucla" ) ) );
 
-    return Response.ok( docMaker.getAllClasses() ).build();
+    return Response.ok( docMaker.getAllSimples() ).build();
   }
 }

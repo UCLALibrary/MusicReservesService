@@ -20,11 +20,18 @@ public class WorkMapper
     throws SQLException
   {
     Work bean;
+    
     bean = new Work();
-    bean.setDisplay( rs.getString( "Display" ) );
-    bean.setHttpURL( rs.getString( "http_url" ) );
-    bean.setIsVideo( rs.getBoolean( "video" ) );
-    bean.setRtmpURL( rs.getString( "rtmp_url" ) );
+    bean.setCallNumber( rs.getString( "Librarycallnumber" ) );
+    bean.setComposer( rs.getString( "Composer" ) );
+    bean.setIsVideo( rs.getBoolean( "Video" ) );
+    bean.setLabel( rs.getString( "Label" ) );
+    bean.setLabelCatalogNumber( rs.getString( "Labelnumber" ) );
+    bean.setNoteOne( rs.getString( "Note1" ) );
+    bean.setNoteTwo( rs.getString( "Note2" ) );
+    bean.setPerformers( rs.getString( "Performers" ) );
+    bean.setTitle( rs.getString( "Title" ) );
+    bean.setWorkID( rs.getInt( "WorkID" ) );
     
     return bean;
   }

@@ -17,6 +17,7 @@ public class DataSourceFactory
     ds = new DriverManagerDataSource();
     ds.setDriverClassName( "net.sourceforge.jtds.jdbc.Driver" );
     ds.setUrl( "jdbc:jtds:sqlserver://db-audio.library.ucla.edu:1433/Audio" );
+    //ds.setUrl( "jdbc:jtds:sqlserver://db-audio.library.ucla.edu:1433/Audio_Test" );
     ds.setUsername( "Audio_dbo" );
     ds.setPassword( "Audio_dbo_pwd" );
     

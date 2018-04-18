@@ -15,7 +15,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 public class ItemGenerator
 {
-  private static final String QUERY = "SELECT * FROM dbo.get_items(?,?)";
+  private static final String QUERY = "SELECT * FROM dbo.get_items_alt(?,?)";
   private DataSource ds;
   private String     srs;
   private int        workID;

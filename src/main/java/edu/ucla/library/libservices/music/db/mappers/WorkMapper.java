@@ -24,6 +24,7 @@ public class WorkMapper
     bean = new Work();
     bean.setCallNumber( rs.getString( "Librarycallnumber" ) );
     bean.setComposer( rs.getString( "Composer" ) );
+    bean.setEmbedURL( rs.getString( "EmbedURL" ) );
     bean.setIsVideo( rs.getBoolean( "Video" ) );
     bean.setLabel( rs.getString( "Label" ) );
     bean.setLabelCatalogNumber( rs.getString( "Labelnumber" ) );

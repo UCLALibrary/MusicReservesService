@@ -27,6 +27,8 @@ public class Work
   private String labelCatalogNumber;
   @XmlElement( name = "callNumber" )
   private String callNumber;
+  @XmlElement( name = "embedURL" )
+  private String embedURL;
   @XmlElement( name = "items" )
   private List<Item> items;
   private int workID;
@@ -144,5 +146,15 @@ public class Work
   public List<Item> getItems()
   {
     return items;
+  }
+
+  public void setEmbedURL( String embedURL )
+  {
+    this.embedURL = embedURL;
+  }
+
+  public String getEmbedURL()
+  {
+    return embedURL;
   }
 }

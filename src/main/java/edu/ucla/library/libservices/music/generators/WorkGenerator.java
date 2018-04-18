@@ -19,7 +19,7 @@ public class WorkGenerator
 {
   private static final String QUERY =
     "SELECT  l.WorkID, w.Composer, w.Title, w.Performers, w.Note1, w.Note2, w.Label, w.Labelnumber, " +
-    "w.Librarycallnumber, w.Video FROM dbo.Works w Inner JOIN dbo.Link l ON w.workid = l.workid INNER JOIN " +
+    "w.Librarycallnumber, w.Video, w.EmbedURL FROM dbo.Works w Inner JOIN dbo.Link l ON w.workid = l.workid INNER JOIN " +
     "dbo.Classes c ON l.ClassID = c.ClassID INNER JOIN dbo.CurrentQuarter cq ON c.Quarter = cq.Quarter AND c.Year = " + 
     "cq.Year WHERE SRS = ? ORDER BY w.Composer, w.Title";
 

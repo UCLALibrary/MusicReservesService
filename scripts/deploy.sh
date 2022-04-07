@@ -37,6 +37,16 @@ chmod 0644 ~/.ssh/known_hosts
   echo "pwd"
   echo "ls -l"
 ) | sftp -b - ${SFTP_USER}@${SFTP_SERVER}
+status=$?
+if [ $status -ne 0 ]; then
+    echo "Error with SFTP"
+    exit 1
+fi
 
 # Webhook to Jenkins server to initiate deploy
 curl "https://${CI_JENKINS_USER_CREDS}@${JENKINS_HOST}/${CI_JENKINS_JOB_URI}/buildWithParameters?token=${CI_JENKINS_DEPLOY_TOKEN}&TOMCAT_HOST=${CI_JENKINS_TOMCAT_HOST}&WEBAPP_NAME=${SFTP_PROJECT}"
+status=$?
+if [ $status -ne 0 ]; then
+    echo "Error with Jenkins/curl"
+    exit 2
+fi
